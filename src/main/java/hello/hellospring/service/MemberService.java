@@ -32,18 +32,18 @@ public class MemberService {
 //        [// Member member1 = result.get(); 멤버값 꺼낼시에 단, 권장하지는 않음]
 //        result.ifPresent(m -> {
 
-        long start = System.currentTimeMillis(); // 조회시간 측정
+//        long start = System.currentTimeMillis(); // 조회시간 측정
 
-        try {
+//        try {
             validateDuplicateMember(member); // 중복회원 검증
             memberRepository.save(member);
             return member.getId();
 
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMs = finish - start;
-            System.out.println("join = " + timeMs + "ms");
-        }
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join = " + timeMs + "ms");
+//        }
     }
 
     private void validateDuplicateMember(Member member) {
@@ -57,14 +57,14 @@ public class MemberService {
     전체 회원 조회
      */
     public List<Member> findMembers() {
-        long start = System.currentTimeMillis();
-        try {
+//        long start = System.currentTimeMillis();
+//        try {
             return memberRepository.findAll();
-        } finally {
-            long finish = System.currentTimeMillis();
-            long timeMS = finish - start;
-            System.out.println("findMembers " + timeMS + "ms");
-        }
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMS = finish - start;
+//            System.out.println("findMembers " + timeMS + "ms");
+//        }
     }
 
     public Optional<Member> findOne(Long memberId) {
